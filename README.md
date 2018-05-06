@@ -2,22 +2,22 @@
 
 Basic example of spring boot application with docker containers
 
-## Running this application-
+### Running this application-
 
    mvn clean install
 
    mvn spring-boot:run
 
-## Run application as container (two step build image and run containers)
+### Run application as container (two steps- build image and run container)
 
-## Build docker image-
+### Build docker image-
 
-### Either use below command to create image or use spotify plugin to build image (by deafult this app builds image using plugin).
+#### Either use below command to create image or use spotify plugin (by deafult this app builds image using plugin).
  We are passing jar file name as argument. We can hardcode this path instead in Docker file. Command to build image
 
     docker build -f Dockerfile -t web --build-arg JAR_FILE=target/springboot-docker-1.0-SNAPSHOT.jar .
 
-### Run docker image
+#### Run docker image
     docker run -d -p 8080:8080 -t web
 
 
